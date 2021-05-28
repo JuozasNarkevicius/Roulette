@@ -17,6 +17,7 @@ code {
   max-width: 80vh;
   max-height: 80vh;
   padding: 60px 100px;
+  padding-top: 30px;
   margin: 0 auto;
   text-align: left;
 
@@ -84,4 +85,32 @@ button {
   margin: 40px 30px 0 30px;
   background-color: #254cdd;
   color:white;
+}
+
+#blackButton {
+  background-color: #000000;
+  color:white;
+  border-color: #000000;
+  margin-right: 10px;
+}
+
+#redButton {
+  background-color: #c90000;
+  color:white;
+  border-color: #000000;
+  margin-right: 10px;
+  margin-left: 10px;
+  
+}
+
+#greenButton {
+  background-color: #00ad2b;
+  color:white;
+  border-color: #000000;
+}
+
+#spinButton {
+  background-color: #254cdd;
+  color: white;
+  margin-right: 10px;
 }
