@@ -34,7 +34,6 @@ contract Roulette {
         ];
 
     function Start() public {
-        //msg.sender.transfer(0);
         for(uint i = 0; i < 18; i++) {
             colors[RED_NUMBERS[i]] = 1;
         }
@@ -54,9 +53,8 @@ contract Roulette {
     }
 
     function spinAll() public {
-        //bytes32 random = keccak256(abi.encodePacked(now, msg.sender));
-        //result = int(uint(random) % NUM_POCKETS) - 1;
-        result = 1;
+        bytes32 random = keccak256(abi.encodePacked(now, msg.sender));
+        result = int(uint(random) % NUM_POCKETS) - 1;
         for(uint i = 0; i < counter; i++) {
             resolveBets(i);
         }
@@ -72,7 +70,7 @@ contract Roulette {
         require(msg.sender == bet.user);
         if(bet.betType == BetType.Color) {
             if(bet.choice == colors[result] && result > 0)
-                msg.sender.transfer(bet.amount * 2);               //    < --- This does not work!!!
+                msg.sender.transfer(bet.amount * 2);
         }
         else if(bet.betType == BetType.Number)
         {
