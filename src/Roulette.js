@@ -3,7 +3,7 @@ import { connectWallet, getCurrentWalletConnected } from "./utils/interact.js";
 import { startWeb3, donate, makeBetOnBlack, makeBetOnRed, makeBetOnGreen, spin } from "./utils/interactWithContract.js";
 //import Web3 from 'web3';
 
-const Minter = (props) => {
+const Roulette = (props) => {
 
   //State variables
   const [walletAddress, setWallet] = useState("");
@@ -72,7 +72,7 @@ const Minter = (props) => {
 
 
   return (
-    <div className="Minter">
+    <div className="Roulette">
       <h1 id="title">SmartRoulette</h1>
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (
@@ -100,7 +100,7 @@ const Minter = (props) => {
         <h2>Bet amount: </h2>
         <input
           type="text"
-          placeholder="Choose an amount of ether to bet! Just be careful, gambling is addictive :)"
+          placeholder="Choose an amount of ether to bet!"
           onChange={(event) => setBetAmount(event.target.value)}
         />
       </form>
@@ -127,4 +127,4 @@ const Minter = (props) => {
   );
 };
 
-export default Minter;
+export default Roulette;
